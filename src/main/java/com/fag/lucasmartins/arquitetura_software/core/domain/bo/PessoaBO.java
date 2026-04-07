@@ -4,11 +4,10 @@ import com.fag.lucasmartins.arquitetura_software.core.domain.exceptions.DomainEx
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.UUID;
 
 public class PessoaBO {
 
-    private UUID id;
+    private Long id;
 
     private String nomeCompleto;
 
@@ -21,9 +20,6 @@ public class PessoaBO {
     private String telefone;
 
     public void prepararParaCadastro() {
-        if (this.id == null) {
-            this.id = UUID.randomUUID();
-        }
         validarCamposObrigatorios();
         validarMaioridade();
         validarCpf();
@@ -74,11 +70,11 @@ public class PessoaBO {
         }
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

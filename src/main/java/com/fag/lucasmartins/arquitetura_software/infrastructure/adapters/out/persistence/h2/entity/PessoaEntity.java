@@ -5,14 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Table(name = "tb_pessoa")
 public class PessoaEntity {
 
     @Id
-    private UUID id;
+    private Long id;
 
     @Column(nullable = false)
     private String nomeCompleto;
@@ -29,11 +28,11 @@ public class PessoaEntity {
     @Column(nullable = false, length = 11)
     private String telefone;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

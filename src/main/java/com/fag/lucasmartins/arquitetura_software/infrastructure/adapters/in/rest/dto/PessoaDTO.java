@@ -1,11 +1,10 @@
 package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class PessoaDTO {
 
-    private UUID id;
+    private Long id;
 
     private String nomeCompleto;
 
@@ -17,11 +16,11 @@ public class PessoaDTO {
 
     private String telefone;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
