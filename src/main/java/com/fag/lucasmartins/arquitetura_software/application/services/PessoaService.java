@@ -16,7 +16,7 @@ public class PessoaService implements PessoaServicePort {
 
     @Override
     public PessoaBO salvar(PessoaBO pessoaBO) {
-        pessoaBO.prepararParaCadastro();
+        pessoaBO.validar();
         return pessoaRepositoryPort.salvar(pessoaBO);
     }
 }

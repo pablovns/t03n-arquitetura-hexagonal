@@ -19,7 +19,7 @@ public class PessoaBO {
 
     private String telefone;
 
-    public void prepararParaCadastro() {
+    public void validar() {
         validarCamposObrigatorios();
         validarMaioridade();
         validarCpf();
@@ -28,7 +28,7 @@ public class PessoaBO {
     }
 
     private void validarCamposObrigatorios() {
-        if (nomeCompleto == null || nomeCompleto.trim().isEmpty()) {
+        if (nomeCompleto == null || nomeCompleto.isBlank()) {
             throw new DomainException("Erro: Nome completo é obrigatório.");
         }
         if (dataNascimento == null) {
@@ -44,7 +44,7 @@ public class PessoaBO {
     }
 
     private void validarCpf() {
-        if (cpf == null || cpf.trim().isEmpty()) {
+        if (cpf == null || cpf.isBlank()) {
             throw new DomainException("Erro: CPF é obrigatório.");
         }
         if (!cpf.matches("\\d{11}")) {
@@ -53,7 +53,7 @@ public class PessoaBO {
     }
 
     private void validarEmail() {
-        if (email == null || email.trim().isEmpty()) {
+        if (email == null || email.isBlank()) {
             throw new DomainException("Erro: E-mail é obrigatório.");
         }
         if (!email.contains("@")) {
@@ -62,7 +62,7 @@ public class PessoaBO {
     }
 
     private void validarTelefone() {
-        if (telefone == null || telefone.trim().isEmpty()) {
+        if (telefone == null || telefone.isBlank()) {
             throw new DomainException("Erro: Telefone é obrigatório.");
         }
         if (!telefone.matches("\\d{11}")) {
